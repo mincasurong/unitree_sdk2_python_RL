@@ -109,4 +109,4 @@ Replace `enp2s0` with the name of the network interface to which the robot is co
 ```bash
 python3 ./example/vui_client/vui_client_example.py enp2s0
 ```
-Replace `enp2s0` with the name of the network interface to which the robot is connected.T he robot will cycle the volume and light brightness. The interface is detailed at https://support.unitree.com/home/en/developer/VuiClient
+Replace `enp2s0` with the name of the network interface to which the robot is connected.T he robot will cycle the volume and light brightness. The interface is detailed at https://support.unitree.com/home/en/developer/VuiClient# unitree_sdk2_python_RL
