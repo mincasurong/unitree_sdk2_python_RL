@@ -5,10 +5,10 @@ from unitree_sdk2py.core.channel import ChannelFactoryInitialize
 from unitree_sdk2py.go2.obstacles_avoid.obstacles_avoid_client import ObstaclesAvoidClient
 
 if __name__ == "__main__":
-    if len(sys.argv)>1:
-        ChannelFactoryInitialize(0, sys.argv[1])
+    if len(sys.argv)<2:
+        ChannelFactoryInitialize(1, 'lo')
     else:
-        ChannelFactoryInitialize(0)
+        ChannelFactoryInitialize(0, sys.argv[1])
 
     try:
         client = ObstaclesAvoidClient()

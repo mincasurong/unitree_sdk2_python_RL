@@ -16,10 +16,10 @@ def LowStateHandler(msg: LowState_):
 
 
 if __name__ == "__main__":
-    if len(sys.argv)>1:
-        ChannelFactoryInitialize(0, sys.argv[1])
+    if len(sys.argv)<2:
+        ChannelFactoryInitialize(1, 'lo')
     else:
-        ChannelFactoryInitialize(0)
+        ChannelFactoryInitialize(0, sys.argv[1])
     sub = ChannelSubscriber("rt/lowstate", LowState_)
     sub.Init(LowStateHandler, 10)
 

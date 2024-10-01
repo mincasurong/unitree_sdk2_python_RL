@@ -30,6 +30,7 @@ class SportModeTest:
         self.px0 = robot_state.position[0]
         self.py0 = robot_state.position[1]
         self.yaw0 = robot_state.imu_state.rpy[2]
+        
 
     def StandUpDown(self):
         self.client.StandDown()
@@ -119,14 +120,16 @@ def HighStateHandler(msg: SportModeState_):
 
 
 if __name__ == "__main__":
-    if len(sys.argv)>1:
-        ChannelFactoryInitialize(0, sys.argv[1])
+    if len(sys.argv) < 2:
+        ChannelFactoryInitialize(1, "lo")
     else:
-        ChannelFactoryInitialize(0)
+        ChannelFactoryInitialize(0, sys.argv[1])
         
     sub = ChannelSubscriber("rt/sportmodestate", SportModeState_)
     sub.Init(HighStateHandler, 10)
     time.sleep(1)
+
+    print(sub)
 
     test = SportModeTest()
     test.GetInitState(robot_state)
@@ -135,10 +138,10 @@ if __name__ == "__main__":
     while True:
         test.t += test.dt
 
-        test.StandUpDown()
+        # test.StandUpDown()
         # test.VelocityMove()
         # test.BalanceAttitude()
         # test.TrajectoryFollow()
-        # test.SpecialMotions()
+        test.SpecialMotions()
 
         time.sleep(test.dt)

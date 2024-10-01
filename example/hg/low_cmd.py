@@ -18,10 +18,10 @@ kNumMotors = 35
 
 if __name__ == "__main__":
 
-    if len(sys.argv)>1:
-        ChannelFactoryInitialize(0, sys.argv[1])
+    if len(sys.argv)<2:
+        ChannelFactoryInitialize(0 ,'lo')
     else:
-        ChannelFactoryInitialize(0)
+        ChannelFactoryInitialize(0, sys.argv[1])
     
     # 初始化发布节点
     low_cmd_publisher = ChannelPublisher(kTopicArmSDK, LowCmd_)

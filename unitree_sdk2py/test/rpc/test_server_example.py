@@ -33,7 +33,7 @@ class TestServer(Server):
 
 if __name__ ==  "__main__":
     # initialize channel factory.
-    ChannelFactoryInitialize(0)
+    ChannelFactoryInitialize(0, 'lo')
 
     # create server
     server = TestServer()

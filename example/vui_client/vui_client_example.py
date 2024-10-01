@@ -6,9 +6,9 @@ from unitree_sdk2py.go2.vui.vui_client import VuiClient
 
 if __name__ == "__main__":
     if len(sys.argv)>1:
-        ChannelFactoryInitialize(0, sys.argv[1])
+        ChannelFactoryInitialize(1, sys.argv[1])
     else:
-        ChannelFactoryInitialize(0)
+        ChannelFactoryInitialize(1, 'lo')
 
     client = VuiClient()
     client.SetTimeout(3.0)

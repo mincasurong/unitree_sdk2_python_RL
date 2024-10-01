@@ -16,9 +16,10 @@ def LowStateHandler(msg: LowState_):
 
 if __name__ == "__main__":
     # Modify "enp2s0" to the actual network interface
-    ChannelFactoryInitialize(0, "enp2s0")
+    ChannelFactoryInitialize(0, 'lo')
     sub = ChannelSubscriber("rt/lowstate", LowState_)
     sub.Init(LowStateHandler, 10)
 
     while True:
-        time.sleep(10.0)
+        LowStateHandler()        
+        time.sleep(1.0)

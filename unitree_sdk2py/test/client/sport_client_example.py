@@ -3,7 +3,7 @@ from unitree_sdk2py.core.channel import ChannelFactoryInitialize
 from unitree_sdk2py.go2.sport.sport_client import SportClient, PathPoint, SPORT_PATH_POINT_SIZE
 
 if __name__ == "__main__":
-    ChannelFactoryInitialize(0, "enp2s0")
+    ChannelFactoryInitialize(1, "lo")
     client = SportClient()
     client.SetTimeout(10.0)
     client.Init()

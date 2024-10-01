@@ -37,7 +37,7 @@ class TestClient(Client):
 
 if __name__ ==  "__main__":
     # initialize channel factory.
-    ChannelFactoryInitialize(0)
+    ChannelFactoryInitialize(0, 'lo')
 
     # create client
     client = TestClient(True)
@@ -53,10 +53,10 @@ if __name__ ==  "__main__":
 
     # test api
     while True:
-        code = client.Move(0.2, 0, 0)
+        code = client.Move(1, 0, 0)
         print("client move ret:", code)
         time.sleep(1.0)
 
-        code = client.Stop()
-        print("client stop ret:", code)
-        time.sleep(1.0)
+        #code = client.Stop()
+        #print("client stop ret:", code)
+        #time.sleep(1.0)

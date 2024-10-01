@@ -9,7 +9,7 @@ if __name__ == "__main__":
     if len(sys.argv)>1:
         ChannelFactoryInitialize(0, sys.argv[1])
     else:
-        ChannelFactoryInitialize(0)
+        ChannelFactoryInitialize(0, 'lo')
 
     client = VideoClient()  # Create a video client
     client.SetTimeout(3.0)

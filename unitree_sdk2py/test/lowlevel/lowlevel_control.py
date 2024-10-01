@@ -13,7 +13,7 @@ lowCmdThreadPtr=Thread()
 
 if __name__ == '__main__':
 
-    ChannelFactoryInitialize(1, "enp2s0")
+    ChannelFactoryInitialize(0, 'lo')
     # Create a publisher to publish the data defined in UserData class
     pub = ChannelPublisher("lowcmd", LowCmd_)
     pub.Init()
